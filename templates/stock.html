@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Stock</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">Inventory</div>
+
+        <a href="/">Dashboard</a>
+        <a href="/products">Products</a>
+        <a href="/suppliers">Suppliers</a>
+        <a href="/purchase">Purchases</a>
+        <a href="/sales">Sales</a>
+        <a href="/warehouse">Warehouses</a>
+        <a href="/stock">Stock</a>
+      </div>
+
+      <div class="main">
+        <h1 class="page-title">Stock Management</h1>
+
+        <div class="section">
+          <table>
+            <tr>
+              <th>Product</th>
+              <th>Warehouse</th>
+              <th>Quantity</th>
+            </tr>
+
+            {% for s in stock %}
+            <tr>
+              <td>{{ s[0] }}</td>
+              <td>{{ s[1] }}</td>
+              <td>{{ s[2] }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Purchases</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<div class="logo">Inventory</div>
+
+<a href="/">Dashboard</a>
+<a href="/products">Products</a>
+<a href="/suppliers">Suppliers</a>
+<a href="/purchase">Purchases</a>
+<a href="/sales">Sales</a>
+<a href="/warehouse">Warehouses</a>
+<a href="/stock">Stock</a>
+</div>
+
+<div class="main">
+
+<h1 class="page-title">Purchases</h1>
+
+<div class="section">
+
+<h2>Add Purchase</h2>
+
+<form action="/add_purchase" method="POST">
+
+<select name="supplier_id" required>
+<option value="">Select Supplier</option>
+{% for s in suppliers %}
+<option value="{{ s[0] }}">{{ s[1] }}</option>
+{% endfor %}
+</select>
+
+<select name="product_id" required>
+<option value="">Select Product</option>
+{% for p in products %}
+<option value="{{ p[0] }}">{{ p[1] }}</option>
+{% endfor %}
+</select>
+
+<input type="number" name="quantity" placeholder="Quantity" required>
+
+<input type="date" name="purchase_date" required>
+
+<button>Add Purchase</button>
+
+</form>
+
+</div>
+
+<div class="section">
+
+<h2>Purchase History</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Supplier</th>
+<th>Product</th>
+<th>Quantity</th>
+<th>Date</th>
+</tr>
+
+{% for p in purchases %}
+<tr>
+<td>{{ p[0] }}</td>
+<td>{{ p[1] }}</td>
+<td>{{ p[2] }}</td>
+<td>{{ p[3] }}</td>
+<td>{{ p[4] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

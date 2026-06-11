@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Warehouses</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">Inventory</div>
+
+        <a href="/">Dashboard</a>
+        <a href="/products">Products</a>
+        <a href="/suppliers">Suppliers</a>
+        <a href="/purchase">Purchases</a>
+        <a href="/sales">Sales</a>
+        <a href="/warehouse">Warehouses</a>
+        <a href="/stock">Stock</a>
+      </div>
+
+      <div class="main">
+        <h1 class="page-title">Warehouses</h1>
+
+        <div class="section">
+          <h2>Add Warehouse</h2>
+
+          <form action="/add_warehouse" method="POST">
+            <input
+              type="text"
+              name="location"
+              placeholder="Warehouse Location"
+              required
+            />
+
+            <button>Add Warehouse</button>
+          </form>
+        </div>
+
+        <div class="section">
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Location</th>
+              <th>Action</th>
+            </tr>
+
+            {% for w in warehouses %}
+            <tr>
+              <td>{{ w[0] }}</td>
+              <td>{{ w[1] }}</td>
+              <td>
+                <a class="delete-btn" href="/delete_warehouse/{{ w[0] }}">
+                  Delete
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Suppliers</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">Inventory</div>
+
+        <a href="/">Dashboard</a>
+        <a href="/products">Products</a>
+        <a href="/suppliers">Suppliers</a>
+        <a href="/purchase">Purchases</a>
+        <a href="/sales">Sales</a>
+        <a href="/warehouse">Warehouses</a>
+        <a href="/stock">Stock</a>
+      </div>
+
+      <div class="main">
+        <h1 class="page-title">Suppliers</h1>
+
+        <div class="section">
+          <h2 class="section-title">Add Supplier</h2>
+
+          <form action="/add_supplier" method="POST">
+            <input
+              type="text"
+              name="name"
+              placeholder="Supplier Name"
+              required
+            />
+
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number"
+              required
+            />
+
+            <input type="text" name="address" placeholder="Address" required />
+
+            <button>Add Supplier</button>
+          </form>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Supplier List</h2>
+
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Action</th>
+            </tr>
+
+            {% for s in suppliers %}
+            <tr>
+              <td>{{ s[0] }}</td>
+              <td>{{ s[1] }}</td>
+              <td>{{ s[2] }}</td>
+              <td>{{ s[3] }}</td>
+              <td>
+                <a class="delete-btn" href="/delete_supplier/{{ s[0] }}">
+                  Delete
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

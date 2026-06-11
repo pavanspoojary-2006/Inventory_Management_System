@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory Management</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+
+<div class="logo">Inventory</div>
+
+<a href="/">Dashboard</a>
+<a href="/products">Products</a>
+<a href="/suppliers">Suppliers</a>
+<a href="/purchase">Purchases</a>
+<a href="/sales">Sales</a>
+<a href="/warehouse">Warehouses</a>
+<a href="/stock">Stock</a>
+
+</div>
+
+<div class="main">
+
+<h1 class="page-title">Inventory Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>{{ products }}</h2>
+<p>Total Products</p>
+</div>
+
+<div class="card">
+<h2>{{ suppliers }}</h2>
+<p>Total Suppliers</p>
+</div>
+
+<div class="card">
+<h2>{{ warehouses }}</h2>
+<p>Total Warehouses</p>
+</div>
+
+<div class="card">
+<h2>{{ stock }}</h2>
+<p>Total Stock Units</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
