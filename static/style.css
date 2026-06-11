@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter, Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:260px;
+    background:linear-gradient(180deg,#1565C0,#0D47A1);
+    color:white;
+    padding:25px;
+    position:fixed;
+    height:100vh;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:14px;
+    margin:8px 0;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+.main{
+    margin-left:260px;
+    width:100%;
+    padding:35px;
+}
+
+.page-title{
+    font-size:40px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card h2{
+    font-size:35px;
+    color:#0D47A1;
+}
+
+.card p{
+    margin-top:10px;
+    color:#666;
+}
+
+.section{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-top:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.section-title{
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#0D47A1;
+    color:white;
+}
+
+th,td{
+    padding:14px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+form{
+    display:grid;
+    gap:12px;
+}
+
+input,select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+button{
+    background:#0D47A1;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1565C0;
+}
+
+.delete-btn{
+    background:#d32f2f;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.delete-btn:hover{
+    background:#b71c1c;
+}
