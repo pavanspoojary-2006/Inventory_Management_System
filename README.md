@@ -2,9 +2,9 @@ Inventory Management System
 
 Overview
 
-Inventory Management System is a full-stack web application developed using Flask and MySQL for managing products, suppliers, warehouses, purchases, sales, and stock information. The system provides a centralized platform to track inventory operations efficiently through an intuitive dashboard and management modules.
+The Inventory Management System is a full-stack web application developed using Flask, MySQL, HTML, CSS, and JavaScript. The system provides a centralized platform for managing products, suppliers, warehouses, purchases, sales, and inventory stock levels.
 
-This project was developed as part of a Database Management Systems (DBMS) academic project and demonstrates the integration of frontend, backend, and database technologies.
+The application is designed to simplify inventory operations by providing an intuitive dashboard and efficient management tools for inventory-related activities.
 
 ---
 
@@ -12,50 +12,50 @@ Features
 
 Dashboard
 
-- View total number of products
-- View total number of suppliers
-- View total number of warehouses
-- View total stock units available
-- Interactive management dashboard
+- Display total number of products
+- Display total number of suppliers
+- Display total number of warehouses
+- Display total available stock units
+- Quick navigation to all management modules
 
 Product Management
 
 - Add new products
 - View product details
+- Manage product information
 - Delete products
-- Manage product categories and pricing
 
 Supplier Management
 
-- Add suppliers
+- Add new suppliers
 - View supplier information
+- Manage supplier records
 - Delete suppliers
-- Manage supplier contact details
 
 Warehouse Management
 
 - Add warehouse locations
-- View warehouse records
+- View warehouse information
+- Manage warehouse records
 - Delete warehouses
-- Manage inventory storage locations
 
 Purchase Management
 
 - Record product purchases
-- Track supplier transactions
-- Maintain purchase history
+- Track purchase history
+- Maintain supplier-product relationships
 
 Sales Management
 
 - Record product sales
-- Track sales transactions
-- Maintain sales history
+- Track sales history
+- Monitor product movement
 
 Stock Management
 
 - View stock availability
 - Monitor inventory across warehouses
-- Track product quantities
+- Track product quantities by location
 
 ---
 
@@ -70,7 +70,7 @@ Frontend
 Backend
 
 - Python
-- Flask Framework
+- Flask
 
 Database
 
@@ -80,53 +80,87 @@ Database
 
 Database Schema
 
-Product
-
-Field| Description
-product_id| Unique Product ID
-name| Product Name
-category| Product Category
-price| Product Price
-
 Supplier
 
-Field| Description
-supplier_id| Unique Supplier ID
-name| Supplier Name
-phone| Contact Number
-address| Supplier Address
+Column| Description
+supplier_id| Unique supplier identifier
+name| Supplier name
+phone| Contact number
+address| Supplier address
 
-Warehouse
+Product
 
-Field| Description
-warehouse_id| Unique Warehouse ID
-location| Warehouse Location
+Column| Description
+product_id| Unique product identifier
+name| Product name
+category| Product category
+price| Product price
 
 Purchase
 
-Field| Description
-purchase_id| Purchase ID
-supplier_id| Supplier Reference
-product_id| Product Reference
-quantity| Purchased Quantity
-purchase_date| Purchase Date
+Column| Description
+purchase_id| Unique purchase identifier
+supplier_id| Supplier reference
+product_id| Product reference
+quantity| Purchased quantity
+purchase_date| Purchase date
 
 Sales
 
-Field| Description
-sales_id| Sales ID
-product_id| Product Reference
-quantity| Sold Quantity
-sales_date| Sales Date
-selling_price| Selling Price
+Column| Description
+sales_id| Unique sales identifier
+product_id| Product reference
+quantity| Sold quantity
+sales_date| Sales date
+selling_price| Selling price
+
+Warehouse
+
+Column| Description
+warehouse_id| Unique warehouse identifier
+location| Warehouse location
 
 Stock
 
-Field| Description
-stock_id| Stock ID
-product_id| Product Reference
-warehouse_id| Warehouse Reference
-quantity| Available Quantity
+Column| Description
+stock_id| Unique stock identifier
+product_id| Product reference
+warehouse_id| Warehouse reference
+quantity| Available quantity
+
+---
+
+Installation
+
+1. Clone the Repository
+
+git clone https://github.com/pavanspoojary-2006/Inventory_Management_System.git
+cd Inventory_Management_System
+
+2. Create a Virtual Environment
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+3. Install Dependencies
+
+pip install flask pymysql
+
+4. Configure MySQL Database
+
+Create the database:
+
+CREATE DATABASE inventory_management;
+
+Import the required tables and sample records into the database.
+
+5. Run the Application
+
+python3 server.py
+
+Open the application in your browser:
+
+http://127.0.0.1:5000
 
 ---
 
@@ -153,75 +187,39 @@ Inventory_Management_System/
 
 ---
 
-Installation and Setup
+Application Modules
 
-1. Clone the Repository
-
-git clone https://github.com/pavanspoojary-2006/Inventory_Management_System.git
-cd Inventory_Management_System
-
-2. Create a Virtual Environment
-
-python3 -m venv .venv
-source .venv/bin/activate
-
-3. Install Required Packages
-
-pip install flask pymysql
-
-4. Configure MySQL Database
-
-Create a database:
-
-CREATE DATABASE inventory_management;
-
-Import the required tables and sample data into the database.
-
-Update database credentials in "server.py" if necessary.
-
-5. Run the Application
-
-python3 server.py
-
-Open your browser and visit:
-
-http://127.0.0.1:5000
-
----
-
-Learning Outcomes
-
-- Database design and normalization
-- SQL query implementation
-- Flask web development
-- Frontend and backend integration
-- CRUD operations
-- Inventory tracking systems
-- Full-stack application development
+- Dashboard
+- Product Management
+- Supplier Management
+- Warehouse Management
+- Purchase Management
+- Sales Management
+- Stock Management
 
 ---
 
 Future Enhancements
 
 - User authentication and authorization
-- Role-based access control
-- Inventory analytics dashboard
-- PDF report generation
-- Barcode and QR code integration
+- Inventory alerts and notifications
+- Data export to Excel and PDF
+- Advanced reporting and analytics
 - Search and filtering functionality
-- REST API integration
+- Responsive mobile interface
 - Cloud deployment support
 
 ---
 
 Author
 
-Pavan S Poojary 
-4MW24AD026
+Pawan S
+
+Bachelor of Engineering (B.E.)
 Artificial Intelligence and Data Science
 
 ---
 
 License
 
-This project is intended for educational, academic, and learning purposes.
+This project is developed for educational and academic purposes.
