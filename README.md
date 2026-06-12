@@ -1,216 +1,227 @@
-# Inventory Management System
+Inventory Management System
 
-## Overview
+Overview
 
-Inventory Management System is a full-stack web application developed using Flask and MySQL to manage products, suppliers, warehouses, purchases, sales, and stock records efficiently.
+Inventory Management System is a full-stack web application developed using Flask and MySQL for managing products, suppliers, warehouses, purchases, sales, and stock information. The system provides a centralized platform to track inventory operations efficiently through an intuitive dashboard and management modules.
 
-The system provides a centralized dashboard for monitoring inventory statistics and enables users to manage inventory operations through an intuitive web interface.
+This project was developed as part of a Database Management Systems (DBMS) academic project and demonstrates the integration of frontend, backend, and database technologies.
 
 ---
 
-## Features
+Features
 
-### Dashboard
+Dashboard
+
 - View total number of products
 - View total number of suppliers
 - View total number of warehouses
-- View total available stock units
+- View total stock units available
+- Interactive management dashboard
 
-### Product Management
+Product Management
+
 - Add new products
-- View all products
+- View product details
 - Delete products
-- Manage product details including category and price
+- Manage product categories and pricing
 
-### Supplier Management
-- Add new suppliers
+Supplier Management
+
+- Add suppliers
 - View supplier information
 - Delete suppliers
-- Store supplier contact details
+- Manage supplier contact details
 
-### Warehouse Management
-- Add warehouses
-- View warehouse locations
+Warehouse Management
+
+- Add warehouse locations
+- View warehouse records
 - Delete warehouses
-- Manage storage locations
+- Manage inventory storage locations
 
-### Purchase Management
+Purchase Management
+
 - Record product purchases
 - Track supplier transactions
 - Maintain purchase history
 
-### Sales Management
+Sales Management
+
 - Record product sales
 - Track sales transactions
 - Maintain sales history
 
-### Stock Management
-- Monitor inventory levels
-- View stock distribution across warehouses
+Stock Management
+
+- View stock availability
+- Monitor inventory across warehouses
 - Track product quantities
 
 ---
 
-## Technology Stack
+Technology Stack
 
-### Frontend
+Frontend
+
 - HTML5
 - CSS3
 - JavaScript
 
-### Backend
-- Python
-- Flask
+Backend
 
-### Database
+- Python
+- Flask Framework
+
+Database
+
 - MySQL
 
 ---
 
-## Database Schema
+Database Schema
 
-### Supplier
-| Field | Type |
-|---------|---------|
-| supplier_id | INT |
-| name | VARCHAR |
-| phone | VARCHAR |
-| address | VARCHAR |
+Product
 
-### Product
-| Field | Type |
-|---------|---------|
-| product_id | INT |
-| name | VARCHAR |
-| category | VARCHAR |
-| price | DECIMAL |
+Field| Description
+product_id| Unique Product ID
+name| Product Name
+category| Product Category
+price| Product Price
 
-### Purchase
-| Field | Type |
-|---------|---------|
-| purchase_id | INT |
-| supplier_id | INT |
-| product_id | INT |
-| quantity | INT |
-| purchase_date | DATE |
+Supplier
 
-### Sales
-| Field | Type |
-|---------|---------|
-| sales_id | INT |
-| product_id | INT |
-| quantity | INT |
-| sales_date | DATE |
-| selling_price | DECIMAL |
+Field| Description
+supplier_id| Unique Supplier ID
+name| Supplier Name
+phone| Contact Number
+address| Supplier Address
 
-### Warehouse
-| Field | Type |
-|---------|---------|
-| warehouse_id | INT |
-| location | VARCHAR |
+Warehouse
 
-### Stock
-| Field | Type |
-|---------|---------|
-| stock_id | INT |
-| product_id | INT |
-| warehouse_id | INT |
-| quantity | INT |
+Field| Description
+warehouse_id| Unique Warehouse ID
+location| Warehouse Location
 
----
+Purchase
 
-## Project Structure
+Field| Description
+purchase_id| Purchase ID
+supplier_id| Supplier Reference
+product_id| Product Reference
+quantity| Purchased Quantity
+purchase_date| Purchase Date
 
-text Inventory_Management_System/ │ ├── server.py │ ├── templates/ │   ├── index.html │   ├── products.html │   ├── suppliers.html │   ├── purchase.html │   ├── sales.html │   ├── warehouse.html │   └── stock.html │ ├── static/ │   ├── style.css │   └── script.js │ └── README.md 
+Sales
+
+Field| Description
+sales_id| Sales ID
+product_id| Product Reference
+quantity| Sold Quantity
+sales_date| Sales Date
+selling_price| Selling Price
+
+Stock
+
+Field| Description
+stock_id| Stock ID
+product_id| Product Reference
+warehouse_id| Warehouse Reference
+quantity| Available Quantity
 
 ---
 
-## Installation and Setup
+Project Structure
 
-### 1. Clone the Repository
+Inventory_Management_System/
+│
+├── server.py
+│
+├── templates/
+│   ├── index.html
+│   ├── products.html
+│   ├── suppliers.html
+│   ├── purchase.html
+│   ├── sales.html
+│   ├── warehouse.html
+│   └── stock.html
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+└── README.md
 
-bash git clone https://github.com/pavanspoojary-2006/Inventory_Management_System.git cd Inventory_Management_System 
+---
 
-### 2. Create Virtual Environment
+Installation and Setup
 
-bash python3 -m venv .venv source .venv/bin/activate 
+1. Clone the Repository
 
-### 3. Install Dependencies
+git clone https://github.com/pavanspoojary-2006/Inventory_Management_System.git
+cd Inventory_Management_System
 
-bash pip install flask pymysql 
+2. Create a Virtual Environment
 
-### 4. Configure MySQL Database
+python3 -m venv .venv
+source .venv/bin/activate
+
+3. Install Required Packages
+
+pip install flask pymysql
+
+4. Configure MySQL Database
 
 Create a database:
 
-sql CREATE DATABASE inventory_management; 
+CREATE DATABASE inventory_management;
 
 Import the required tables and sample data into the database.
 
-Update database credentials in server.py if necessary.
+Update database credentials in "server.py" if necessary.
 
-### 5. Run the Application
+5. Run the Application
 
-bash python3 server.py 
+python3 server.py
 
-### 6. Open in Browser
+Open your browser and visit:
 
-text http://127.0.0.1:5000 
-
----
-
-## Screenshots
-
-### Dashboard
-Add project screenshots here.
-
-### Products Page
-Add project screenshots here.
-
-### Suppliers Page
-Add project screenshots here.
-
-### Warehouse Page
-Add project screenshots here.
-
-### Stock Page
-Add project screenshots here.
+http://127.0.0.1:5000
 
 ---
 
-## Learning Outcomes
-
-This project demonstrates:
+Learning Outcomes
 
 - Database design and normalization
-- CRUD operations using Flask and MySQL
-- Frontend development with HTML, CSS, and JavaScript
-- Backend development using Flask
-- Dynamic data rendering using Jinja Templates
-- Full-stack web application development
+- SQL query implementation
+- Flask web development
+- Frontend and backend integration
+- CRUD operations
+- Inventory tracking systems
+- Full-stack application development
 
 ---
 
-## Future Enhancements
+Future Enhancements
 
 - User authentication and authorization
 - Role-based access control
+- Inventory analytics dashboard
+- PDF report generation
+- Barcode and QR code integration
 - Search and filtering functionality
-- Inventory alerts and notifications
-- Export reports to PDF and Excel
-- Data visualization and analytics dashboard
+- REST API integration
+- Cloud deployment support
 
 ---
 
-## Author
+Author
 
-Pawan S
-
-Bachelor of Engineering (B.E.)  
+Pavan S Poojary 
+4MW24AD026
 Artificial Intelligence and Data Science
 
 ---
 
-## License
+License
 
-This project was developed for educational and academic purposes.
+This project is intended for educational, academic, and learning purposes.
